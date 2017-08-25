@@ -1,4 +1,4 @@
-package com.spring01.start;
+package com.spring.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -11,9 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * Handles requests for the application home page.
- */
 @Controller
 public class HomeController {
 	
@@ -33,25 +30,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "login/home";
+		return "home";
 	}
-
-    @RequestMapping(value = "/username", method = RequestMethod.GET)
-    public String username(Locale locale, Model model) {
-        logger.info("Welcome home! The client locale is {}.", locale);
-                
-        model.addAttribute("serverTime", "aaaa" );
-        
-        return "login/username";
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login(Locale locale, Model model) {
-        logger.info("Welcome home! The client locale is {}.", locale);
-                
-        model.addAttribute("username", "가나다" );
-        model.addAttribute("password", "마바사" );
-        
-        return "login/login";
-    }
+	
 }
